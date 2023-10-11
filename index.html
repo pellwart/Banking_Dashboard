@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online payment dashboard</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+     <link  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://kit.fontawesome.com/b98c1b24b8.js" crossorigin="anonymous"></script>
+    
+  
+</head>
+<body>
+    <main>
+        <aside>
+            <div id="icons-top">
+                <img src="img/bank_logo.png" class="aside-logo">
+                <i class="fa-regular fa-square fa-lg fa-icon"></i>
+                <i class="fa-regular fa-credit-card fa-lg fa-icon"></i>
+                <i class="fa-regular fa-money-bill-1 fa-lg fa-icon"></i>
+                <i class="fa-regular fa-message fa-lg fa-icon"></i>
+            </div>
+            <div id="icons-bottom">
+                <i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>
+                <i class="fa-solid fa-sliders fa-icon"></i>     
+                <i class="fa-solid fa-phone fa-icon"></i>
+                <i class="fa-solid fa-signal fa-icon"></i>
+            </div>
+        </aside>
+        <section id="main-dashboard">
+            <div id="menu">
+                <div id="menu-bar" onclick="menuOnClick()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                </div>
+                <nav class="nav" id="nav">
+                    <section id="cards">
+                        <div class="customer-menu">
+                            
+                            <div class="circular-portrait">
+                                <img src="img/person.jpeg" >
+                            </div>
+                            <h4>Customer 1
+                                <i class="bx bx-chevron-down" id="arrow"></i>
+                            </h4>
+                        </div>
+                        <h2>My cards</h2>
+                        <div class="credit-card">
+                            <p>1234 5678 9101 1121</p>
+                            <img src="img/credit-card.png">
+                        </div>
+                        <button class="cards-button">Add New Cards</button>
+                        <h2>Scheduled payments</h2>
+                        <table id="cards-table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="img/spotify4.png">
+                                        Spotify
+                                        <p>Bank transfer</p>
+                                    </td>
+                                    <td>
+                                        <i class="bx bx-right-arrow-alt" id="arrow"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="img/house.png">
+                                        Rent
+                                        <p>Bank transfer</p>
+                                    </td>
+                                    <td>
+                                        <i class="bx bx-right-arrow-alt" id="arrow"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </nav> 
+              </div>
+              <div class="menu-bg" id="menu-bg"></div>
+        </div>
+            <header>
+                <div class="col-1">
+                    <h2>Good morning, Customer1!</h2>
+                </div>
+                <div class="col-2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder= "Search transaction..">
+                    <button>+ Add widget</button>
+            </header>
+            <div id="dashboard-details">
+                <div class="dashboard-sides">
+                    <h1>Dashboard</h1>
+                    <div class="side-dashboard pink">
+                        <h4>Balance</h4>
+                        <h3>EUR 40,900</h3>
+                        <p>-0,5% less than last month</p>
+                        <!-- <i class="side-icon fa-solid fa-sack-dollar fa-2xl"></i> -->
+                        <img src="img/salary.png" class="side-icon-color">
+                    </div>
+                    <div class="side-dashboard yellow">
+                        <h4>Income</h4>
+                        <h3>EUR 12,700</h3>
+                        <p>+2,5% than last month</p>
+                        <img src="img/profits.png" class="side-icon-color">
+                    </div>
+                    <div class="side-dashboard green">
+                        <h4>Spending</h4>
+                        <h3>EUR 6,230</h3>
+                        <p>-1,2% than last month</p>
+                        <img src="img/spending.png" class="side-icon-color">
+                    </div>
+                </div>
+                <div class="dashboard-main">
+                    <div class="main-dashboard-screen">
+                        <div>
+                            <h2>€ 18,500</h2>
+                            <h4>5% less than the last week</h4>
+                            <div class="ct-chart c.ct-square"></div>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div id="transaction-history">
+                <h3>Transaction history</h3>
+                <button class="transaction-btn-1">This month</button>
+                <button class="transaction-btn-2">Filter</button>
+                <table id="transactions-table">
+                    <tbody>
+                        <tr class="table-heading">
+                            <th>
+                                <button class="btn" id="btn">
+                                    Transactions
+                                    <i class="bx bx-chevron-down" id="arrow"></i>
+                                  </button>
+                                  <div class="dropdown" id="dropdown">
+                                    <a href="#create">
+                                      <i class="bx bx-plus-circle"></i>
+                                     New transaction
+                                    </a>
+                                      <!-- <a href="#profile">
+                                        <i class="bx bx-user"></i>
+                                        Profile Settings
+                                      </a> -->
+                                      <a href="#notification">
+                                        <i class="bx bx-bell"></i>
+                                        Notification
+                                      </a>
+                                      <a href="#settings">
+                                        <i class="bx bx-cog"></i>
+                                        Settings
+                                      </a>
+                                  </div>  
+                            </th>
+                            <th>
+                                <button class="btn" id="btn">
+                                   Status
+                                    <i class="bx bx-chevron-down" id="arrow"></i>
+                                  </button>
+                                  <div class="dropdown" id="dropdown1">
+                                    <a href="#create">
+                                      <i class="bx bx-plus-circle"></i>
+                                      Create New
+                                    </a>
+                                  </div>
+                            </th>
+                            <th>
+                                <button class="btn" id="btn">
+                                    Amount
+                                    <i class="bx bx-chevron-down" id="arrow"></i>
+                                  </button>
+                                  <div class="dropdown" id="dropdown2">
+                                    <a href="#create">
+                                      <i class="bx bx-plus-circle"></i>
+                                      Create New
+                                    </a>
+                                  </div>
+                            </th>
+                            <th>
+                                <button class="btn" id="btn">
+                                     Date
+                                    <i class="bx bx-chevron-down" id="arrow"></i>
+                                  </button>
+                                  <div class="dropdown" id="dropdown3">
+                                    <a href="#create">
+                                      <i class="bx bx-plus-circle"></i>
+                                      Create New
+                                    </a>
+                                  </div>
+                            </th>
+                            <th>
+                                <button class="btn" id="btn">
+                                   Payments
+                                    <i class="bx bx-chevron-down" id="arrow"></i>
+                                  </button>
+                                  <div class="dropdown" id="dropdown4">
+                                    <a href="#create">
+                                      <i class="bx bx-plus-circle"></i>
+                                      Create New
+                                    </a>
+                                  </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img/figma1.png">
+                                Figma
+                            </td>
+                            <td>Unpaid</td>
+                            <td>EUR 250</td>
+                            <td>Sept 24</td>
+                            <td>Visa *1234</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="img/spotify4.png">
+                                Spotify</td>
+                            <td>Unpaid</td>
+                            <td>EUR 250</td>
+                            <td>Sept 24</td>
+                            <td>Visa *1234</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+       
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
